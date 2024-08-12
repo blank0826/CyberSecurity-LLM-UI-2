@@ -7,6 +7,8 @@ import { NavbarHeaderComponent } from './navbar-header/navbar-header.component';
 import { ChatbotPageComponent } from './chatbot-page/chatbot-page.component';
 import { ModelUploadComponent } from './model-upload/model-upload.component';
 import { SecurityMetricsComponent } from './security-metrics/security-metrics.component';
+import { HighchartsChartModule } from 'highcharts-angular';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { SecurityMetricsComponent } from './security-metrics/security-metrics.co
     NavbarHeaderComponent,
     ChatbotPageComponent,
     ModelUploadComponent,
-    SecurityMetricsComponent
+    SecurityMetricsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HighchartsChartModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
