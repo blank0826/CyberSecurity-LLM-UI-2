@@ -20,7 +20,8 @@ export class ChatbotPageComponent implements OnInit{
   constructor(){}
   checkResponse(){
     this.pushChatContent(this.promptText,'You','Person');
-    // this.invokeGPT()
+    this.invokeGPT(this.promptText)
+    this.promptText = '';
   }
 
   pushChatContent(content:string,person:string,scssClass:string){
@@ -33,6 +34,9 @@ export class ChatbotPageComponent implements OnInit{
     return data.split('\n').filter(f=>f.length>0);
   }
 
-  
+  invokeGPT(content:string){
+    this.pushChatContent("Hi How can I help you?",'Mr Bot','bot');
+
+  }
 
 }

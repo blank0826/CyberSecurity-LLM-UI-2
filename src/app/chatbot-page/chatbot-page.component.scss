@@ -1,5 +1,7 @@
 .col-md-12{
     height: 90%;
+    overflow-y: scroll
+    // overflow: auto;
 }
 // .top-chatbot{
 //     background-color: rgb(62, 107, 205);
@@ -22,18 +24,7 @@ input{
     width:100%;
     
 }
-.incoming-msgs{
-    float:right;
 
-    width :70%;
-}
-.bot-img{
-    float: right;
-
-}
-p{
-    text-align: left;
-}
 .btn-outline-secondary{
     background-color: rgb(135, 181, 237);
     color: white;
@@ -55,5 +46,27 @@ p{
     float:right;
 }
 
-
-
+.bot-img{
+    width: 32px;
+    height:35px;
+    float:left;
+}
+.card-text{
+    text-align:right;
+}
+.chatbot-text{
+    text-align:left;
+}
+.incoming-msgs{
+    float:right;
+    width :70%;
+    margin-top: 5px;
+}
+.response-msgs{
+    float:left;
+    width:70%;
+    margin-top: 5px;
+}
+.user-prompts{
+    width:90%
+}

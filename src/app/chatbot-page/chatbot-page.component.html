@@ -8,29 +8,33 @@
                 <h3>ChatBot</h3>
             </div> -->
 
-        <div class="msgs">
-            
-            <div class="incoming-msgs">
-                <div *ngFor="let item of chatConversation">
-                  
-                  <p class="card-text" [ngClass]="item.scssClass">
-                    
-                    <img class="user-img" src="assets/user (1).png"> {{getText(item.response)}}
-                  </p>
-                  <br>
-                </div>
-                
+      <div class="msgs">
+        <div *ngFor="let item of chatConversation">
+          <div class="incoming-msgs" *ngIf="item.person === 'You'">
+            <div><img class="user-img" src="assets/user (1).png" /></div>
+            <div class = "user-prompts">
+              <p class="card-text padding" [ngClass]="item.scssClass">
+                {{ getText(item.response) }}
+              </p>
             </div>
-
+          </div>
+          <div class="response-msgs" *ngIf="item.person != 'You'">
+            <p class="chatbot-text" [ngClass]="item.scssClass">
+              <img class="bot-img" src="assets/robot.png" />
+              {{ getText(item.response) }}
+            </p>
+          </div>
+          <br />
         </div>
-
-
+      </div>
     </div>
     <div class="input-group mb-3">
-      <input class="form-control" [(ngModel)]="promptText"/>
+      <input class="form-control" [(ngModel)]="promptText" />
       <div class="input-group-append">
         <!-- <button class="btn-primary" type="button">Ask</button> -->
-        <button class="btn btn-outline-secondary" (click)="checkResponse()">Ask</button>
+        <button class="btn btn-outline-secondary" (click)="checkResponse()">
+          Ask
+        </button>
       </div>
     </div>
   </div>
