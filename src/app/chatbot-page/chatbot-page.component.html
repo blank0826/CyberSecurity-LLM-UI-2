@@ -9,9 +9,16 @@
             </div> -->
 
         <div class="msgs">
-            <div class="bot-img"><img src="assets/user (1).png" /></div>
+            
             <div class="incoming-msgs">
-                <p>Hi </p>
+                <div *ngFor="let item of chatConversation">
+                  
+                  <p class="card-text" [ngClass]="item.scssClass">
+                    
+                    <img class="user-img" src="assets/user (1).png"> {{getText(item.response)}}
+                  </p>
+                  <br>
+                </div>
                 
             </div>
 
@@ -20,10 +27,10 @@
 
     </div>
     <div class="input-group mb-3">
-      <input class="form-control" />
+      <input class="form-control" [(ngModel)]="promptText"/>
       <div class="input-group-append">
-        <!-- <button class="msg_send_btn" type="button"><fa-icon [icon]="'paper-plane'"></fa-icon></button> -->
-        <!-- <button class="btn btn-outline-secondary">Submit</button> -->
+        <!-- <button class="btn-primary" type="button">Ask</button> -->
+        <button class="btn btn-outline-secondary" (click)="checkResponse()">Ask</button>
       </div>
     </div>
   </div>

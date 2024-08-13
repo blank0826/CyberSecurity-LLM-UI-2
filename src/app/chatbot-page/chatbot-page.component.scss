@@ -40,6 +40,7 @@ p{
 }
 .model-container{
     // height:100%;
+    margin-top: 5px;
     display: flex;
     
 }
@@ -47,23 +48,12 @@ p{
     width:50%;
     // margin-right:90%
 }
-img{
+.user-img{
     width: 32px;
     height:35px;
     margin-left: 5px;
+    float:right;
 }
 
 
-.msg_send_btn {
-  background: #c8dadf none repeat scroll 0 0;
-  border: medium none;
-  border-radius: 50%;
-  color: #fff;
-  cursor: pointer;
-  font-size: 17px;
-  height: 33px;
-  position: absolute;
-  right: 0;
-  top: 11px;
-  width: 33px;
-}
+
