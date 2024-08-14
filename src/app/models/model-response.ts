@@ -10,3 +10,9 @@ export interface ResponseModel{
     created:number;
     model:string;
 }
+
+
+export interface metricsResponse{
+    name:string;
+    val:number;
+}

@@ -10,26 +10,31 @@
 
       <div class="msgs">
         <div *ngFor="let item of chatConversation">
-          <div class="incoming-msgs" *ngIf="item.person === 'You'">
+          <div class="incoming-msgs" *ngIf="item.person === 'You' && item.response != ''">
             <div><img class="user-img" src="assets/user (1).png" /></div>
-            <div class = "user-prompts">
+            <div class="user-prompts">
               <p class="card-text padding" [ngClass]="item.scssClass">
                 {{ getText(item.response) }}
               </p>
+              <br />
             </div>
           </div>
-          <div class="response-msgs" *ngIf="item.person != 'You'">
-            <p class="chatbot-text" [ngClass]="item.scssClass">
-              <img class="bot-img" src="assets/robot.png" />
-              {{ getText(item.response) }}
-            </p>
+          <div class="response-msgs" *ngIf="item.person != 'You' ">
+            <div><img class="bot-img" src="assets/robot.png" /></div>
+            <div class="bot-ans">
+              <p class="chatbot-text padding" [ngClass]="item.scssClass">
+                {{ getText(item.response) }}
+              </p>
+              <br />
+            </div>
+
           </div>
-          <br />
+
         </div>
       </div>
     </div>
     <div class="input-group mb-3">
-      <input class="form-control" [(ngModel)]="promptText" />
+      <input class="form-control"  [(ngModel)]="promptText" />
       <div class="input-group-append">
         <!-- <button class="btn-primary" type="button">Ask</button> -->
         <button class="btn btn-outline-secondary" (click)="checkResponse()">

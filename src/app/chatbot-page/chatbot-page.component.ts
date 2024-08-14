@@ -35,6 +35,7 @@ export class ChatbotPageComponent implements OnInit{
   }
 
   invokeGPT(content:string){
+    if(content=='') return;
     this.pushChatContent("Hi How can I help you?",'Mr Bot','bot');
 
   }

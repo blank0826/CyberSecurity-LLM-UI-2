@@ -61,12 +61,20 @@ input{
     float:right;
     width :70%;
     margin-top: 5px;
+    margin-right:5px;
+    text-wrap: wrap;
 }
 .response-msgs{
     float:left;
     width:70%;
     margin-top: 5px;
+    margin-left:5px;
+    text-wrap: stable;
 }
 .user-prompts{
-    width:90%
+    width:90%;
+}
+.bot-ans{
+    width:90%;
+    margin-left: 40px;
 }
