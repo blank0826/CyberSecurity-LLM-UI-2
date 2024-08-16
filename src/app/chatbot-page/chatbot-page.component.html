@@ -1,40 +1,29 @@
 <div class="model-container">
-  <div class="plots-container">
-    <app-security-metrics></app-security-metrics>
-  </div>
   <div class="container">
     <div class="col-md-12 text-center">
       <!-- <div class="top-chatbot">
                 <h3>ChatBot</h3>
             </div> -->
-
+      <div class="heading-container">
+        <h4>TEST YOUR PROMPT HERE!</h4>
+        <hr width="100%" size="2">
+      </div>
       <div class="msgs">
-        <div *ngFor="let item of chatConversation">
-          <div class="incoming-msgs" *ngIf="item.person === 'You' && item.response != ''">
-            <div><img class="user-img" src="assets/user (1).png" /></div>
-            <div class="user-prompts">
-              <p class="card-text padding" [ngClass]="item.scssClass">
-                {{ getText(item.response) }}
-              </p>
-              <br />
-            </div>
+        <div
+          class="card text-white mb-3"
+          *ngIf="chatConversation.response != ''"
+        >
+          <div class="card-body">
+            <p class="card-text padding" [ngClass]="chatConversation.scssClass">
+              {{ getText(chatConversation.response) }}
+            </p>
+            <br />
           </div>
-          <div class="response-msgs" *ngIf="item.person != 'You' ">
-            <div><img class="bot-img" src="assets/robot.png" /></div>
-            <div class="bot-ans">
-              <p class="chatbot-text padding" [ngClass]="item.scssClass">
-                {{ getText(item.response) }}
-              </p>
-              <br />
-            </div>
-
-          </div>
-
         </div>
       </div>
     </div>
-    <div class="input-group mb-3">
-      <input class="form-control"  [(ngModel)]="promptText" />
+    <div class="input-group">
+      <input class="form-control" [(ngModel)]="promptText" />
       <div class="input-group-append">
         <!-- <button class="btn-primary" type="button">Ask</button> -->
         <button class="btn btn-outline-secondary" (click)="checkResponse()">
@@ -42,5 +31,9 @@
         </button>
       </div>
     </div>
+    <br />
+  </div>
+  <div class="plots-container">
+    <app-metrics-cards></app-metrics-cards>
   </div>
 </div>

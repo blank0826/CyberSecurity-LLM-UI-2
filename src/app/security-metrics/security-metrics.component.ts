@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HighChartsMore from 'highcharts/highcharts-more';
 import { metricsResponse } from '../models/model-response';
-
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 HighChartsMore(Highcharts);
 
 @Component({
@@ -15,8 +15,8 @@ export class SecurityMetricsComponent implements OnInit{
     
   }
   metrics: metricsResponse[]=[];
-  
-  constructor(){}
+  modalRef !: BsModalRef;
+  constructor(private modalService:BsModalService){}
   getAllMetrics(){
     //why adding const solves this error?
     // why adding constructor solved the previous error
@@ -36,7 +36,7 @@ export class SecurityMetricsComponent implements OnInit{
       // plotBackgroundImage: null,
       plotBorderWidth: 0,
       plotShadow: false,
-      height: '80%'
+      height: '70%'
   },
     title: {
       text: "Model Security Factors",

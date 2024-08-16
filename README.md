@@ -32,3 +32,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Current Bugs--- 
 
 1) If I type ;;;; it is overflowing, fix that
+
+
+2) Cards module https://mdbootstrap.com/docs/angular/components/cards/

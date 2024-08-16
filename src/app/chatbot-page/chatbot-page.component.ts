@@ -12,21 +12,22 @@ export class ChatbotPageComponent implements OnInit{
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
-  chatConversation: ChatWithBot[]=[];
+  chatConversation: ChatWithBot = {person:'',response:'',scssClass:''};
   response!: ResponseModel | undefined;
   promptText = '';
   showSpnner=false;
 
   constructor(){}
   checkResponse(){
+    console.log(this.promptText);
     this.pushChatContent(this.promptText,'You','Person');
-    this.invokeGPT(this.promptText)
-    this.promptText = '';
+    this.invokeGPT();
+    this.promptText='';
   }
 
   pushChatContent(content:string,person:string,scssClass:string){
     const chatToPush: ChatWithBot = {person:person,response:content,scssClass:scssClass};
-    this.chatConversation.push(chatToPush);
+    this.chatConversation = chatToPush;
 
   }
 
@@ -34,9 +35,7 @@ export class ChatbotPageComponent implements OnInit{
     return data.split('\n').filter(f=>f.length>0);
   }
 
-  invokeGPT(content:string){
-    if(content=='') return;
-    this.pushChatContent("Hi How can I help you?",'Mr Bot','bot');
+  invokeGPT(){
 
   }
 

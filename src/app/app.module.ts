@@ -10,7 +10,9 @@ import { ModelUploadComponent } from './model-upload/model-upload.component';
 import { SecurityMetricsComponent } from './security-metrics/security-metrics.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { MetricsCardsComponent } from './metrics-cards/metrics-cards.component';
+import {ModalModule} from 'ngx-bootstrap/modal';
+import { DetailViewModalComponent } from './detail-view-modal/detail-view-modal.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,13 +20,16 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ChatbotPageComponent,
     ModelUploadComponent,
     SecurityMetricsComponent,
+    MetricsCardsComponent,
+    DetailViewModalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HighchartsChartModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    ModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

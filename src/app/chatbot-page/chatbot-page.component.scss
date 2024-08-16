@@ -1,6 +1,6 @@
 .col-md-12{
     height: 90%;
-    overflow-y: scroll
+    // overflow-y: scroll
     // overflow: auto;
 }
 // .top-chatbot{
@@ -9,15 +9,25 @@
 //     height:40px
     
 // }
+.input-group{
+    padding-bottom: 10px;
+}
 .container{
     // margin-top: 10px;
     border-radius: 25px;
     border-style:groove;
     width: 50%;
     // margin-right: 20px;
-    background-color:rgb(235, 235, 237);
+    background-color:#d8d8d8;
     height:80vh;
+    padding-bottom: 20px;
+    margin:5px 5px 2px 5px;
     // flex:1;
+}
+.heading-container{
+  // background-color: rgb(88, 88, 89);
+    color:BLACK;
+    padding-top:5px;
 }
 input{
     float:right;
@@ -26,7 +36,7 @@ input{
 }
 
 .btn-outline-secondary{
-    background-color: rgb(135, 181, 237);
+    background-color: rgb(5, 56, 119);
     color: white;
 }
 .model-container{
@@ -46,35 +56,34 @@ input{
     float:right;
 }
 
-.bot-img{
-    width: 32px;
-    height:35px;
-    float:left;
-}
+// .bot-img{
+//     width: 32px;
+//     height:35px;
+//     float:left;
+// }
 .card-text{
-    text-align:right;
-}
-.chatbot-text{
     text-align:left;
+    font-size: large;
 }
-.incoming-msgs{
-    float:right;
-    width :70%;
+// .chatbot-text{
+//     text-align:left;
+// }
+.card{
+    width:fit-content;
     margin-top: 5px;
     margin-right:5px;
     text-wrap: wrap;
+    background-color:#0d6efd;
+    border-radius: 25px;
+    height:fit-content
 }
-.response-msgs{
-    float:left;
-    width:70%;
-    margin-top: 5px;
-    margin-left:5px;
-    text-wrap: stable;
-}
+// .response-msgs{
+//     float:left;
+//     width:70%;
+//     margin-top: 5px;
+//     margin-left:5px;
+//     text-wrap: stable;
+// }
 .user-prompts{
     width:90%;
-}
-.bot-ans{
-    width:90%;
-    margin-left: 40px;
 }
