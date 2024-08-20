@@ -1,1 +1,30 @@
-<p>detail-view-modal works!</p>
+<div class="container">
+    <div class="title-header" style="width:100%">
+        <h4 style="width:100%">Modal</h4>
+    </div>
+    <div class="plots-container">
+        <highcharts-chart *ngIf="chartOptions" style="height:100%; 
+        width:100%;
+        flex:0.5; min-width:40%" [Highcharts]="Highcharts" [options]="chartOptions"
+            [callbackFunction]="chartCallback" class="basic-example__chart">
+        </highcharts-chart>
+        <highcharts-chart *ngIf="chartOptions" [Highcharts]="Highcharts" style="height:100%; width:100%;flex:0.5; min-width:40%" modal-header [options]="chartOptions"
+            [callbackFunction]="chartCallback" class="basic-example__chart">
+        </highcharts-chart>
+        <highcharts-chart *ngIf="chartOptions" [Highcharts]="Highcharts" style="height:100%; width:100%;flex:0.5; min-width:40%" modal-header [options]="chartOptions"
+            [callbackFunction]="chartCallback" class="basic-example__chart">
+        </highcharts-chart>
+        <highcharts-chart *ngIf="chartOptions" [Highcharts]="Highcharts" style="height:100%; width:100%;flex:0.5; min-width:40%" modal-header [options]="chartOptions"
+            [callbackFunction]="chartCallback" class="basic-example__chart">
+        </highcharts-chart>
+        <highcharts-chart *ngIf="chartOptions" [Highcharts]="Highcharts" style="height:100%; width:100%;flex:0.5; min-width:40%" modal-header [options]="chartOptions"
+            [callbackFunction]="chartCallback" class="basic-example__chart">
+        </highcharts-chart>
+        <highcharts-chart *ngIf="chartOptions" [Highcharts]="Highcharts" style="height:100%; width:100%;flex:0.5; min-width:40%" modal-header [options]="chartOptions"
+        [callbackFunction]="chartCallback" class="basic-example__chart">
+        </highcharts-chart>
+        <!-- <highcharts-chart *ngIf="chartOptions" [Highcharts]="Highcharts" style="height:100%; width:100%;flex:0.5; min-width:40%" modal-header [options]="chartOptions"
+            [callbackFunction]="chartCallback" class="basic-example__chart">
+        </highcharts-chart> -->
+    </div>
+</div>
