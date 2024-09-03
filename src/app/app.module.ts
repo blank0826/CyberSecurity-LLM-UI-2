@@ -12,6 +12,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MetricsCardsComponent } from './metrics-cards/metrics-cards.component';
 import {ModalModule} from 'ngx-bootstrap/modal';
 import { DetailViewModalComponent } from './detail-view-modal/detail-view-modal.component'
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { DetailViewModalComponent } from './detail-view-modal/detail-view-modal.
     AppRoutingModule,
     HighchartsChartModule,
     FontAwesomeModule,
+    HttpClientModule,
     FormsModule,
     ModalModule.forRoot()
   ],

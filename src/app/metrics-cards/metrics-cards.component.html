@@ -6,42 +6,28 @@
     <div class="card text-white bg-dark mb-3">
       <div class="card-header">TOXICITY</div>
       <div class="card-body">
-        <p>This factor tells about xyz of the prompt</p>
+        <p>The Toxicity Scanner provides a mechanism to analyze and mitigate the toxicity of text content, playing a crucial role in maintaining the health and safety of online interactions.</p>
         <!-- <button (click)="showScoreOnCellClick()" class="btn btn-primary">Know More</button> -->
       </div>
     </div>
     <div class="card text-white bg-dark mb-3">
       <div class="card-header">ANONYMIZE</div>
       <div class="card-body">
-        <p>This factor tells about xyz of the prompt</p>
+        <p>The Anonymize Scanner acts as your digital guardian, ensuring your user prompts remain confidential and free from sensitive data exposure.</p>
         <!-- <button class="btn btn-primary">Know More</button> -->
       </div>
     </div>
     <div class="card text-white bg-dark mb-3">
       <div class="card-header">INVISIBLE TEXT</div>
       <div class="card-body">
-        <p>This factor tells about xyz of the prompt</p>
-        <!-- <button class="btn btn-primary">Know More</button> -->
-      </div>
-    </div>
-    <div class="card text-white bg-dark mb-3">
-      <div class="card-header">SENTIMENT</div>
-      <div class="card-body">
-        <p>This factor tells about xyz of the prompt</p>
-        <!-- <button class="btn btn-primary">Know More</button> -->
-      </div>
-    </div>
-    <div class="card text-white bg-dark mb-3">
-      <div class="card-header">GIBBERISH</div>
-      <div class="card-body">
-        <p>This factor tells about xyz of the prompt</p>
+        <p>The Invisible Text Scanner is designed to detect and remove non-printable, invisible Unicode characters from text inputs.</p>
         <!-- <button class="btn btn-primary">Know More</button> -->
       </div>
     </div>
     <div class="card text-white bg-dark mb-3">
       <div class="card-header">PROMPT INJECTION</div>
       <div class="card-body">
-        <p>This factor tells about xyz of the prompt</p>
+        <p>It is specifically tailored to guard against crafty input manipulations targeting large language models (LLM).</p>
         <!-- <button class="btn btn-primary">Know More</button> -->
       </div>
     </div>
@@ -49,5 +35,5 @@
   
 </div>
 <div class="score-container">
-  <button (click)="showScoreOnCellClick()" class="btn btn-primary">Detailed Score</button>
+  <button type="button" [disabled]="metricsDataArray.length==0" (click)="showScoreOnCellClick()" class="btn btn-primary">Detailed Score</button>
 </div>
