@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PromptcheckService {
+  private apiUrl = 'http://localhost:5000/api/data';
   // private metricsData : MetricsData[] = [];
   private metricsData : MetricsData[] = mockData;
 
@@ -26,6 +27,14 @@ export class PromptcheckService {
   // }
   sendPromptToService(prompt: any){
     //this.datasource will be changes when this method is called
+    this.http.get<MetricsData[]>(`${this.apiUrl}+${prompt}`).subscribe(
+      (response)=>{
+        this.metricsData = response;
+      },
+      (error)=>{
+        console.error('Error fetching data',error);
+      }
+    )
     this.dataSource.next(this.metricsData);
   }
 }
