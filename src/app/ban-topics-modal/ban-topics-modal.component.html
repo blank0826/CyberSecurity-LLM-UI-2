@@ -1,0 +1,14 @@
+
+
+<!-- <div class="modal-dialog" > -->
+<div class="modal-content">
+    <highcharts-chart
+        *ngIf="chartOptions"
+        style="height: 50%; width: 90%; min-width: 40%; align-self: center;"
+        [Highcharts]="Highcharts"
+        [options]="chartOptions"
+        [callbackFunction]="chartCallback"
+        class="basic-example__chart"/>
+    </div>
+<!-- </div> -->
+            

@@ -1,9 +1,12 @@
+import { SubMetricsData } from "./submetrics-value";
+
 export interface MetricsData {
   alert: boolean;
   metric: string;
   response: string;
   sanitized_prompt: string;
   value: number;
+  subMetrics:SubMetricsData[];
 }
 
 export const mockData: MetricsData[] = [
@@ -13,6 +16,7 @@ export const mockData: MetricsData[] = [
     response: "I can't answer this question",
     sanitized_prompt: 'Are bombs safe?',
     value: 30.5,
+    subMetrics: [{name:'Violence',value:40}]
   },
   {
     alert: false,
@@ -20,6 +24,7 @@ export const mockData: MetricsData[] = [
     response: "I can't answer this question",
     sanitized_prompt: 'Are bombs safe?',
     value: 40.0,
+    subMetrics: [{name:'Violence',value:40}]
   },
   {
     alert: false,
@@ -27,5 +32,6 @@ export const mockData: MetricsData[] = [
     response: "I can't answer this question",
     sanitized_prompt: 'Are bombs safe?',
     value: 20.0,
+    subMetrics: [{name:'Violence',value:40}]
   },
 ];

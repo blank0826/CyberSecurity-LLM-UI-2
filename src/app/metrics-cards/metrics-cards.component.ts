@@ -3,8 +3,9 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { DetailViewModalComponent } from '../detail-view-modal/detail-view-modal.component';
 import { Subject } from 'rxjs';
 import { PromptcheckService } from '../services/promptcheck.service';
-import { MetricsData } from '../services/metrics-value';
+import { MetricsData, mockData } from '../services/metrics-value';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { BanTopicsModalComponent } from '../ban-topics-modal/ban-topics-modal.component';
 @Component({
   selector: 'app-metrics-cards',
   templateUrl: './metrics-cards.component.html',
@@ -15,22 +16,19 @@ export class MetricsCardsComponent implements OnInit {
   metricsDataArray : MetricsData[] = [];
   showSpinner: boolean = false;
   ngOnInit(): void {
-    this.spinner.show();
     this.promptCheckService.currentPrompt.subscribe(metricsData =>{
       this.metricsDataArray = metricsData;
       console.log("This is Metrics Card ",metricsData);
-      this.spinner.hide();
     })
 
   }
   public modalRef!: BsModalRef;
-  constructor(private modalService: BsModalService, private spinner: NgxSpinnerService) {
+  constructor(private modalService: BsModalService) {
 
   }
   showScoreOnCellClick() {
 
 
-    let message = "Hi I am priya";
     this.modalRef = this.modalService.show(DetailViewModalComponent,{ initialState: { message: this.metricsDataArray}, class:'modal-lg'});
     this.modalRef.content.onClose = new Subject<boolean>();
 
@@ -38,7 +36,14 @@ export class MetricsCardsComponent implements OnInit {
         console.log('results', result);
      });
 
-
-
+  }
+  showBanTopicsOnCellClick(){
+    // this.modalRef = this.modalService.show(BanTopicsModalComponent,{initialState:{message:this.metricsDataArray[4].subMetrics},class:'modal-lg'});
+    this.modalRef = this.modalService.show(BanTopicsModalComponent,{initialState:{message:mockData[0].subMetrics},class:'modal-dialog-centered'});
+    
+    this.modalRef.content.onClose = new Subject<boolean>();
+    this.modalRef.content.onClose.subscribe((result:any)=>{
+      console.log('BanTopics',result);
+    })
   }
 }

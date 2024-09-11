@@ -1,9 +1,45 @@
 <div class="main-container">
-
   <div class="title-block">
     <h3>METRICS</h3>
   </div>
+  <div style="margin:20px 20px 20px 20px"
+      [ngClass]="{
+        'card text-white': true,
+        'bg-dark mb-3': metricsDataArray.length == 0,
+        'bg-success mb-3':
+          metricsDataArray.length != 0 && metricsDataArray[4].value < 30,
+        'bg-warning mb-3':
+          metricsDataArray.length != 0 &&
+          metricsDataArray[4].value < 70 &&
+          metricsDataArray[4].value >= 30,
+        'bg-danger mb-3':
+          metricsDataArray.length != 0 && metricsDataArray[4].value >= 70
+      }"
+    >
+      <div class="card-header">Ban Topics</div>
+      <div class="card-body">
+        <p>
+          This scanner diligently examines user inputs, ensuring that they don't
+          carry any secrets before they are processed by the language model.
+        </p>
+        <div class="score-container">
+          <button
+            type="button"
+            
+            (click)="showBanTopicsOnCellClick()"
+            class="btn btn-light"
+          >
+            Topics Score
+          </button>
+        </div>
+        <!-- <button (click)="showScoreOnCellClick()" class="btn btn-primary">Know More</button> -->
+      </div>
+    </div>
+
+    
+
   <div class="container">
+    
     <div
       [ngClass]="{
         'card text-white': true,
@@ -18,12 +54,11 @@
           metricsDataArray.length != 0 && metricsDataArray[0].value >= 70
       }"
     >
-      <div class="card-header">TOXICITY</div>
+      <div class="card-header">Secrets</div>
       <div class="card-body">
         <p>
-          The Toxicity Scanner provides a mechanism to analyze and mitigate the
-          toxicity of text content, playing a crucial role in maintaining the
-          health and safety of online interactions.
+          This scanner diligently examines user inputs, ensuring that they don't
+          carry any secrets before they are processed by the language model.
         </p>
         <!-- <button (click)="showScoreOnCellClick()" class="btn btn-primary">Know More</button> -->
       </div>
@@ -103,10 +138,13 @@
 <div class="score-container">
   <button
     type="button"
-    [disabled]="metricsDataArray.length == 0"
+    
     (click)="showScoreOnCellClick()"
     class="btn btn-primary"
   >
     Detailed Score
   </button>
 </div>
+
+
+<!-- [disabled]="metricsDataArray.length == 0" -->

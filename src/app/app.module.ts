@@ -14,7 +14,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { DetailViewModalComponent } from './detail-view-modal/detail-view-modal.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import {BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BanTopicsModalComponent } from './ban-topics-modal/ban-topics-modal.component'
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {BrowserAnimationsModule } from '@angular/platform-browser/animations'
     SecurityMetricsComponent,
     MetricsCardsComponent,
     DetailViewModalComponent,
+    BanTopicsModalComponent,
   ],
   imports: [
     BrowserModule,
