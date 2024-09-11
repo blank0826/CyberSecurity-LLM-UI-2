@@ -14,6 +14,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { DetailViewModalComponent } from './detail-view-modal/detail-view-modal.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import {BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     HttpClientModule,
     FormsModule,
     NgxSpinnerModule,
+    BrowserAnimationsModule,
     ModalModule.forRoot(),
   ],
   providers: [],

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { MetricsData, mockData } from './metrics-value';
 import { BehaviorSubject, lastValueFrom, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,7 @@ export class PromptcheckService {
   private dataSource = new BehaviorSubject<MetricsData[]>([]);
   currentPrompt = this.dataSource.asObservable();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private spinner: NgxSpinnerService) {}
 
   // sendPromptToService(prompt: any):Promise<MetricsData[]>{
   //   return lastValueFrom(this.http.get<any>(`/api+${prompt}`,{withCredentials:true}).pipe(map((response) => {
@@ -27,12 +28,14 @@ export class PromptcheckService {
   sendPromptToService(prompts: any) {
     //this.datasource will be changes when this method is called
     const params = { prompt: prompts };
+    this.spinner.show();
     this.http.get<MetricsData[]>(this.apiUrl, { params }).subscribe(
       (response) => {
         console.log(response);
         this.metricsData = response;
         console.log('mD1', this.metricsData);
         this.dataSource.next(this.metricsData);
+        this.spinner.hide();
       },
       (error) => {
         console.error('Error fetching data', error);
