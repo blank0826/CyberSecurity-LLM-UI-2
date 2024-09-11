@@ -11,7 +11,7 @@ describe('DetailViewModalComponent', () => {
       declarations: [DetailViewModalComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(DetailViewModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -4,6 +4,7 @@ import { DetailViewModalComponent } from '../detail-view-modal/detail-view-modal
 import { Subject } from 'rxjs';
 import { PromptcheckService } from '../services/promptcheck.service';
 import { MetricsData } from '../services/metrics-value';
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-metrics-cards',
   templateUrl: './metrics-cards.component.html',
@@ -12,20 +13,22 @@ import { MetricsData } from '../services/metrics-value';
 export class MetricsCardsComponent implements OnInit {
   private promptCheckService = inject(PromptcheckService);
   metricsDataArray : MetricsData[] = [];
+  showSpinner: boolean = false;
   ngOnInit(): void {
-
+    this.spinner.show();
     this.promptCheckService.currentPrompt.subscribe(metricsData =>{
       this.metricsDataArray = metricsData;
       console.log("This is Metrics Card ",metricsData);
+      this.spinner.hide();
     })
 
   }
   public modalRef!: BsModalRef;
-  constructor(private modalService: BsModalService) {
+  constructor(private modalService: BsModalService, private spinner: NgxSpinnerService) {
 
   }
   showScoreOnCellClick() {
-    
+
 
     let message = "Hi I am priya";
     this.modalRef = this.modalService.show(DetailViewModalComponent,{ initialState: { message: this.metricsDataArray}, class:'modal-lg'});

@@ -1,63 +1,112 @@
 <div class="main-container">
+
   <div class="title-block">
     <h3>METRICS</h3>
   </div>
   <div class="container">
-    <div [ngClass]="{
-      'card text-white': true ,
-      'bg-dark mb-3': metricsDataArray.length==0,
-      'bg-success mb-3': metricsDataArray.length!=0 && metricsDataArray[0].value <30,
-      'bg-warning mb-3': metricsDataArray.length!=0 && metricsDataArray[0].value <70 && metricsDataArray[0].value >=30,
-      'bg-danger mb-3': metricsDataArray.length!=0 && metricsDataArray[0].value >=70
-    }">
+    <div
+      [ngClass]="{
+        'card text-white': true,
+        'bg-dark mb-3': metricsDataArray.length == 0,
+        'bg-success mb-3':
+          metricsDataArray.length != 0 && metricsDataArray[0].value < 30,
+        'bg-warning mb-3':
+          metricsDataArray.length != 0 &&
+          metricsDataArray[0].value < 70 &&
+          metricsDataArray[0].value >= 30,
+        'bg-danger mb-3':
+          metricsDataArray.length != 0 && metricsDataArray[0].value >= 70
+      }"
+    >
       <div class="card-header">TOXICITY</div>
       <div class="card-body">
-        <p>The Toxicity Scanner provides a mechanism to analyze and mitigate the toxicity of text content, playing a crucial role in maintaining the health and safety of online interactions.</p>
+        <p>
+          The Toxicity Scanner provides a mechanism to analyze and mitigate the
+          toxicity of text content, playing a crucial role in maintaining the
+          health and safety of online interactions.
+        </p>
         <!-- <button (click)="showScoreOnCellClick()" class="btn btn-primary">Know More</button> -->
       </div>
     </div>
-    <div [ngClass]="{
-      'card text-white': true ,
-      'bg-dark mb-3': metricsDataArray.length==0,
-      'bg-success mb-3': metricsDataArray.length!=0 && metricsDataArray[1].value <30,
-      'bg-warning mb-3': metricsDataArray.length!=0 && metricsDataArray[1].value <70 && metricsDataArray[1].value >=30,
-      'bg-danger mb-3': metricsDataArray.length!=0 && metricsDataArray[1].value >=70
-    }">
+    <div
+      [ngClass]="{
+        'card text-white': true,
+        'bg-dark mb-3': metricsDataArray.length == 0,
+        'bg-success mb-3':
+          metricsDataArray.length != 0 && metricsDataArray[1].value < 30,
+        'bg-warning mb-3':
+          metricsDataArray.length != 0 &&
+          metricsDataArray[1].value < 70 &&
+          metricsDataArray[1].value >= 30,
+        'bg-danger mb-3':
+          metricsDataArray.length != 0 && metricsDataArray[1].value >= 70
+      }"
+    >
       <div class="card-header">ANONYMIZE</div>
       <div class="card-body">
-        <p>The Anonymize Scanner acts as your digital guardian, ensuring your user prompts remain confidential and free from sensitive data exposure.</p>
+        <p>
+          The Anonymize Scanner acts as your digital guardian, ensuring your
+          user prompts remain confidential and free from sensitive data
+          exposure.
+        </p>
         <!-- <button class="btn btn-primary">Know More</button> -->
       </div>
     </div>
-    <div [ngClass]="{
-      'card text-white': true ,
-      'bg-dark mb-3': metricsDataArray.length==0,
-      'bg-success mb-3': metricsDataArray.length!=0 && metricsDataArray[2].value <30,
-      'bg-warning mb-3': metricsDataArray.length!=0 && metricsDataArray[2].value <70 && metricsDataArray[2].value >=30,
-      'bg-danger mb-3': metricsDataArray.length!=0 && metricsDataArray[2].value >=70
-    }">
+    <div
+      [ngClass]="{
+        'card text-white': true,
+        'bg-dark mb-3': metricsDataArray.length == 0,
+        'bg-success mb-3':
+          metricsDataArray.length != 0 && metricsDataArray[2].value < 30,
+        'bg-warning mb-3':
+          metricsDataArray.length != 0 &&
+          metricsDataArray[2].value < 70 &&
+          metricsDataArray[2].value >= 30,
+        'bg-danger mb-3':
+          metricsDataArray.length != 0 && metricsDataArray[2].value >= 70
+      }"
+    >
       <div class="card-header">INVISIBLE TEXT</div>
       <div class="card-body">
-        <p>The Invisible Text Scanner is designed to detect and remove non-printable, invisible Unicode characters from text inputs.</p>
+        <p>
+          The Invisible Text Scanner is designed to detect and remove
+          non-printable, invisible Unicode characters from text inputs.
+        </p>
         <!-- <button class="btn btn-primary">Know More</button> -->
       </div>
     </div>
-    <div [ngClass]="{
-      'card text-white': true ,
-      'bg-dark mb-3': metricsDataArray.length==0,
-      'bg-success mb-3': metricsDataArray.length!=0 && metricsDataArray[2].value <30,
-      'bg-warning mb-3': metricsDataArray.length!=0 && metricsDataArray[2].value <70 && metricsDataArray[2].value >=30,
-      'bg-danger mb-3': metricsDataArray.length!=0 && metricsDataArray[2].value >=70
-    }">
+    <div
+      [ngClass]="{
+        'card text-white': true,
+        'bg-dark mb-3': metricsDataArray.length == 0,
+        'bg-success mb-3':
+          metricsDataArray.length != 0 && metricsDataArray[3].value < 30,
+        'bg-warning mb-3':
+          metricsDataArray.length != 0 &&
+          metricsDataArray[3].value < 70 &&
+          metricsDataArray[3].value >= 30,
+        'bg-danger mb-3':
+          metricsDataArray.length != 0 && metricsDataArray[3].value >= 70
+      }"
+    >
       <div class="card-header">PROMPT INJECTION</div>
       <div class="card-body">
-        <p>It is specifically tailored to guard against crafty input manipulations targeting large language models (LLM).</p>
+        <p>
+          It is specifically tailored to guard against crafty input
+          manipulations targeting large language models (LLM).
+        </p>
         <!-- <button class="btn btn-primary">Know More</button> -->
       </div>
     </div>
   </div>
-  
 </div>
 <div class="score-container">
-  <button type="button" [disabled]="metricsDataArray.length==0" (click)="showScoreOnCellClick()" class="btn btn-primary">Detailed Score</button>
+  <button
+    type="button"
+    [disabled]="metricsDataArray.length == 0"
+    (click)="showScoreOnCellClick()"
+    class="btn btn-primary"
+  >
+    Detailed Score
+  </button>
 </div>

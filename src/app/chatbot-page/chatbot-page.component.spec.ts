@@ -11,7 +11,7 @@ describe('ChatbotPageComponent', () => {
       declarations: [ChatbotPageComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(ChatbotPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

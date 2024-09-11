@@ -10,9 +10,12 @@ import { SecurityMetricsComponent } from './security-metrics/security-metrics.co
 import { HighchartsChartModule } from 'highcharts-angular';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MetricsCardsComponent } from './metrics-cards/metrics-cards.component';
-import {ModalModule} from 'ngx-bootstrap/modal';
-import { DetailViewModalComponent } from './detail-view-modal/detail-view-modal.component'
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { DetailViewModalComponent } from './detail-view-modal/detail-view-modal.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import {BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,9 +32,11 @@ import { HttpClientModule } from '@angular/common/http';
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    ModalModule.forRoot()
+    NgxSpinnerModule,
+    BrowserAnimationsModule,
+    ModalModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

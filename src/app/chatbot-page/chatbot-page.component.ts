@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChatWithBot, ResponseModel } from '../models/model-response';
 import { PromptcheckService } from '../services/promptcheck.service';
 import { MetricsData } from '../services/metrics-value';
+import { NgxSpinner, NgxSpinnerService } from 'ngx-spinner';
 
 
 
@@ -20,7 +21,7 @@ export class ChatbotPageComponent implements OnInit{
   showSpnner=false;
   metricsData:MetricsData[]=[];
 
-  constructor(private metricsValue: PromptcheckService){}
+  constructor(private metricsValue: PromptcheckService, private spinner: NgxSpinnerService){}
   checkResponse(){
     console.log(this.promptText);
     this.pushChatContent(this.promptText,'You','Person');
