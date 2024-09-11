@@ -28,7 +28,7 @@ export class MetricsCardsComponent implements OnInit {
 
   }
   showScoreOnCellClick() {
-    
+
 
     let message = "Hi I am priya";
     this.modalRef = this.modalService.show(DetailViewModalComponent,{ initialState: { message: this.metricsDataArray}, class:'modal-lg'});
