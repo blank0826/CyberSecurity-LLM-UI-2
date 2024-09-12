@@ -9,41 +9,41 @@ import { BanTopicsModalComponent } from '../ban-topics-modal/ban-topics-modal.co
 @Component({
   selector: 'app-metrics-cards',
   templateUrl: './metrics-cards.component.html',
-  styleUrl: './metrics-cards.component.scss'
+  styleUrl: './metrics-cards.component.scss',
 })
 export class MetricsCardsComponent implements OnInit {
   private promptCheckService = inject(PromptcheckService);
-  metricsDataArray : MetricsData[] = [];
+  metricsDataArray: MetricsData[] = [];
   showSpinner: boolean = false;
   ngOnInit(): void {
-    this.promptCheckService.currentPrompt.subscribe(metricsData =>{
+    this.promptCheckService.currentPrompt.subscribe((metricsData) => {
       this.metricsDataArray = metricsData;
-      console.log("This is Metrics Card ",metricsData);
-    })
-
+      console.log('This is Metrics Card ', metricsData);
+    });
   }
   public modalRef!: BsModalRef;
-  constructor(private modalService: BsModalService) {
-
-  }
+  constructor(private modalService: BsModalService) {}
   showScoreOnCellClick() {
-
-
-    this.modalRef = this.modalService.show(DetailViewModalComponent,{ initialState: { message: this.metricsDataArray}, class:'modal-lg'});
+    this.modalRef = this.modalService.show(DetailViewModalComponent, {
+      initialState: { message: this.metricsDataArray },
+      class: 'modal-lg',
+    });
     this.modalRef.content.onClose = new Subject<boolean>();
 
     this.modalRef.content.onClose.subscribe((result: any) => {
-        console.log('results', result);
-     });
-
+      console.log('results', result);
+    });
   }
-  showBanTopicsOnCellClick(){
-    // this.modalRef = this.modalService.show(BanTopicsModalComponent,{initialState:{message:this.metricsDataArray[4].subMetrics},class:'modal-lg'});
-    this.modalRef = this.modalService.show(BanTopicsModalComponent,{initialState:{message:mockData[0].subMetrics},class:'modal-dialog-centered'});
-    
+  showBanTopicsOnCellClick() {
+    this.modalRef = this.modalService.show(BanTopicsModalComponent, {
+      initialState: { message: this.metricsDataArray[4].sub_metrics },
+      class: 'modal-dialog-centered ',
+    });
+    // this.modalRef = this.modalService.show(BanTopicsModalComponent,{initialState:{message:mockData[0].subMetrics},class:'modal-dialog-centered'});
+
     this.modalRef.content.onClose = new Subject<boolean>();
-    this.modalRef.content.onClose.subscribe((result:any)=>{
-      console.log('BanTopics',result);
-    })
+    this.modalRef.content.onClose.subscribe((result: any) => {
+      console.log('BanTopics', result);
+    });
   }
 }

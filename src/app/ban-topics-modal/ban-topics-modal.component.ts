@@ -7,15 +7,15 @@ import { mockData } from '../services/metrics-value';
 @Component({
   selector: 'app-ban-topics-modal',
   templateUrl: './ban-topics-modal.component.html',
-  styleUrl: './ban-topics-modal.component.scss'
+  styleUrl: './ban-topics-modal.component.scss',
 })
 export class BanTopicsModalComponent implements OnInit {
   @Input() message!: SubMetricsData[];
-  seriesData:any;
+  seriesData: any;
   chartOptions: any = {};
-  topics:any=['Violence','Discrimination','Discrimination','Discrimination','Discrimination'];
-  subMetricsScore:any=[20,40,50,90,10];
-  Highcharts=Highcharts;
+  topics: any = [];
+  subMetricsScore: any = [];
+  Highcharts = Highcharts;
   chartRef!: Highcharts.Chart;
   chartCallback: Highcharts.ChartCallbackFunction = (chart) => {
     this.chartRef = chart;
@@ -23,37 +23,41 @@ export class BanTopicsModalComponent implements OnInit {
   constructor(private bsModalRef: BsModalRef) {
     Highcharts.setOptions(getOptions());
   }
-  
+
   ngOnInit(): void {
-    this.seriesData = [{name:'Violence',data:30,type:'column'},{name:'Discrimination',data:50,type:'column'}];
-    
-    this.chartOptions ={
+    // this.seriesData = [{name:'Violence',data:30,type:'column'},{name:'Discrimination',data:50,type:'column'}];
+    for (let i = 0; i < 12; i++) {
+      this.topics.push(this.message[i].name);
+      this.subMetricsScore.push(this.message[i].value);
+    }
+
+    this.chartOptions = {
       chart: {
         type: 'bar',
       },
       title: {
         text: 'Banned Topics Score',
-        align: 'center'
+        align: 'center',
       },
       xAxis: {
         categories: this.topics,
         title: {
-          text: null
+          text: null,
         },
         gridLineWidth: 1,
-        lineWidth: 0
+        lineWidth: 0,
       },
       yAxis: {
         min: 0,
-        max:100,
+        max: 100,
         title: {
           text: 'Score (%)',
-          align: 'high'
+          align: 'high',
         },
         labels: {
-          overflow: 'justify'
+          overflow: 'justify',
         },
-        gridLineWidth: 0
+        gridLineWidth: 0,
       },
       // tooltip: {
       //   valueSuffix: ' millions'
@@ -62,9 +66,9 @@ export class BanTopicsModalComponent implements OnInit {
         bar: {
           borderRadius: '50%',
           dataLabels: {
-            enabled: true
-          }
-        }
+            enabled: true,
+          },
+        },
       },
       legend: {
         layout: 'vertical',
@@ -74,37 +78,29 @@ export class BanTopicsModalComponent implements OnInit {
         y: 80,
         floating: true,
         borderWidth: 1,
-        backgroundColor:
-          '#FFFFFF',
-        shadow: true
+        backgroundColor: '#FFFFFF',
+        shadow: true,
       },
       credits: {
-        enabled: false
+        enabled: false,
       },
-      series: [{
-        name: 'Score',
-        colorByPoint: true,
-     // data: Object.values(obj)
-     // or:
-        data: this.subMetricsScore,
-        zones:[
-          {
-            value:40,
-            color:'#238823'
-          },
-          {value:70,
-            color:'#FFBF00'
-          },
-          {value:100,
-            color:'#D2222D'
-          }
-        ]
-    }],
-      
-
-    }
+      series: [
+        {
+          name: 'Score',
+          colorByPoint: true,
+          // data: Object.values(obj)
+          // or:
+          data: this.subMetricsScore,
+          zones: [
+            {
+              value: 10,
+              color: '#238823',
+            },
+            { value: 45, color: '#FFBF00' },
+            { value: 100, color: '#D2222D' },
+          ],
+        },
+      ],
+    };
   }
-
-
-
 }
