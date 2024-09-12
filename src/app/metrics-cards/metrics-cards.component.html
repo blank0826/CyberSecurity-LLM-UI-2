@@ -6,15 +6,8 @@
     style="margin: 20px 20px 20px 20px"
     [ngClass]="{
       'card text-white': true,
-      'bg-dark mb-3': metricsDataArray.length == 0,
-      'bg-success mb-3':
-        metricsDataArray.length != 0 && metricsDataArray[4].value < 30,
-      'bg-warning mb-3':
-        metricsDataArray.length != 0 &&
-        metricsDataArray[4].value < 70 &&
-        metricsDataArray[4].value >= 30,
-      'bg-danger mb-3':
-        metricsDataArray.length != 0 && metricsDataArray[4].value >= 70
+      'bg-dark mb-3': true,
+      
     }"
   >
     <div class="card-header">BAN TOPICS</div>
@@ -146,3 +139,13 @@
 </div>
 
 <!-- [disabled]="metricsDataArray.length == 0" -->
+
+
+<!-- 'bg-success mb-3':
+        metricsDataArray.length != 0 && metricsDataArray[4].value < 30,
+      'bg-warning mb-3':
+        metricsDataArray.length != 0 &&
+        metricsDataArray[4].value < 70 &&
+        metricsDataArray[4].value >= 30,
+      'bg-danger mb-3':
+        metricsDataArray.length != 0 && metricsDataArray[4].value >= 70 -->
