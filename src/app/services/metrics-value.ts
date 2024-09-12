@@ -6,7 +6,7 @@ export interface MetricsData {
   response: string;
   sanitized_prompt: string;
   value: number;
-  subMetrics:SubMetricsData[];
+  sub_metrics:SubMetricsData[];
 }
 
 export const mockData: MetricsData[] = [
@@ -16,7 +16,7 @@ export const mockData: MetricsData[] = [
     response: "I can't answer this question",
     sanitized_prompt: 'Are bombs safe?',
     value: 30.5,
-    subMetrics: [{name:'Violence',value:40}]
+    sub_metrics: [{name:'Violence',value:40}]
   },
   {
     alert: false,
@@ -24,7 +24,7 @@ export const mockData: MetricsData[] = [
     response: "I can't answer this question",
     sanitized_prompt: 'Are bombs safe?',
     value: 40.0,
-    subMetrics: [{name:'Violence',value:40}]
+    sub_metrics: [{name:'Violence',value:40}]
   },
   {
     alert: false,
@@ -32,6 +32,6 @@ export const mockData: MetricsData[] = [
     response: "I can't answer this question",
     sanitized_prompt: 'Are bombs safe?',
     value: 20.0,
-    subMetrics: [{name:'Violence',value:40}]
+    sub_metrics: [{name:'Violence',value:40}]
   },
 ];
