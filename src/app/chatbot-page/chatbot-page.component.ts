@@ -19,7 +19,7 @@ export class ChatbotPageComponent implements OnInit{
   response!: ResponseModel | undefined;
   promptText = '';
   showSpnner=false;
-  promptSuggest!:string ;
+  promptSuggest:string ='' ;
   metricsData:MetricsData[]=[];
 
   constructor(private metricsValue: PromptcheckService, private spinner: NgxSpinnerService){}
