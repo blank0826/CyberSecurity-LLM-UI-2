@@ -6,8 +6,11 @@
     style="margin: 20px 20px 20px 20px"
     [ngClass]="{
       'card text-white': true,
-      'bg-dark mb-3': true,
-      
+      'bg-dark mb-3': metricsDataArray.length == 0,
+      'bg-success mb-3':
+        metricsDataArray.length != 0 && metricsDataArray[4].value == 0,
+      'bg-danger mb-3':
+        metricsDataArray.length != 0 && metricsDataArray[4].value > 0
     }"
   >
     <div class="card-header">BAN TOPICS</div>
@@ -37,13 +40,9 @@
         'card text-white': true,
         'bg-dark mb-3': metricsDataArray.length == 0,
         'bg-success mb-3':
-          metricsDataArray.length != 0 && metricsDataArray[0].value < 30,
-        'bg-warning mb-3':
-          metricsDataArray.length != 0 &&
-          metricsDataArray[0].value < 70 &&
-          metricsDataArray[0].value >= 30,
+          metricsDataArray.length != 0 && metricsDataArray[0].value == 0,
         'bg-danger mb-3':
-          metricsDataArray.length != 0 && metricsDataArray[0].value >= 70
+          metricsDataArray.length != 0 && metricsDataArray[0].value > 0
       }"
     >
       <div class="card-header">SECRETS</div>
@@ -60,13 +59,9 @@
         'card text-white': true,
         'bg-dark mb-3': metricsDataArray.length == 0,
         'bg-success mb-3':
-          metricsDataArray.length != 0 && metricsDataArray[1].value < 30,
-        'bg-warning mb-3':
-          metricsDataArray.length != 0 &&
-          metricsDataArray[1].value < 70 &&
-          metricsDataArray[1].value >= 30,
+          metricsDataArray.length != 0 && metricsDataArray[1].value == 0,
         'bg-danger mb-3':
-          metricsDataArray.length != 0 && metricsDataArray[1].value >= 70
+          metricsDataArray.length != 0 && metricsDataArray[1].value > 0
       }"
     >
       <div class="card-header">ANONYMIZE</div>
@@ -84,13 +79,9 @@
         'card text-white': true,
         'bg-dark mb-3': metricsDataArray.length == 0,
         'bg-success mb-3':
-          metricsDataArray.length != 0 && metricsDataArray[2].value < 30,
-        'bg-warning mb-3':
-          metricsDataArray.length != 0 &&
-          metricsDataArray[2].value < 70 &&
-          metricsDataArray[2].value >= 30,
+          metricsDataArray.length != 0 && metricsDataArray[2].value == 0,
         'bg-danger mb-3':
-          metricsDataArray.length != 0 && metricsDataArray[2].value >= 70
+          metricsDataArray.length != 0 && metricsDataArray[2].value > 0
       }"
     >
       <div class="card-header">INVISIBLE TEXT</div>
@@ -107,13 +98,9 @@
         'card text-white': true,
         'bg-dark mb-3': metricsDataArray.length == 0,
         'bg-success mb-3':
-          metricsDataArray.length != 0 && metricsDataArray[3].value < 30,
-        'bg-warning mb-3':
-          metricsDataArray.length != 0 &&
-          metricsDataArray[3].value < 70 &&
-          metricsDataArray[3].value >= 30,
+          metricsDataArray.length != 0 && metricsDataArray[3].value == 0,
         'bg-danger mb-3':
-          metricsDataArray.length != 0 && metricsDataArray[3].value >= 70
+          metricsDataArray.length != 0 && metricsDataArray[3].value > 0
       }"
     >
       <div class="card-header">PROMPT INJECTION</div>
@@ -139,7 +126,6 @@
 </div>
 
 <!-- [disabled]="metricsDataArray.length == 0" -->
-
 
 <!-- 'bg-success mb-3':
         metricsDataArray.length != 0 && metricsDataArray[4].value < 30,

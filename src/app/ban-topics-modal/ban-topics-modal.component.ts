@@ -26,7 +26,7 @@ export class BanTopicsModalComponent implements OnInit {
 
   ngOnInit(): void {
     // this.seriesData = [{name:'Violence',data:30,type:'column'},{name:'Discrimination',data:50,type:'column'}];
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < this.message.length; i++) {
       this.topics.push(this.message[i].name);
       this.subMetricsScore.push(this.message[i].value);
     }
