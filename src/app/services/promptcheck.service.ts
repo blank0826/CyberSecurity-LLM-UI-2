@@ -26,7 +26,7 @@ export class PromptcheckService {
   //   this.dataSource.next(prompt);
   // }
   sendPromptToService(prompts: any) {
-    //this.datasource will be changes when this method is called
+    //this.datasource will be changed when this method is called
     const params = { prompt: prompts };
     this.spinner.show();
     this.http.get<MetricsData[]>(this.apiUrl, { params }).subscribe(

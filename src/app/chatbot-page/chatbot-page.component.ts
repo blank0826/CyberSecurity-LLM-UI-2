@@ -19,11 +19,13 @@ export class ChatbotPageComponent implements OnInit{
   response!: ResponseModel | undefined;
   promptText = '';
   showSpnner=false;
+  promptSuggest!:string ;
   metricsData:MetricsData[]=[];
 
   constructor(private metricsValue: PromptcheckService, private spinner: NgxSpinnerService){}
   checkResponse(){
     console.log(this.promptText);
+    this.pushChatContent(this.promptText,'You','Person');
     this.pushChatContent(this.promptText,'You','Person');
     this.invokeGPT();
     this.promptText='';
@@ -32,9 +34,12 @@ export class ChatbotPageComponent implements OnInit{
   pushChatContent(content:string,person:string,scssClass:string){
     const chatToPush: ChatWithBot = {person:person,response:content,scssClass:scssClass};
     this.chatConversation = chatToPush;
-    // this.metricsValue.sendPromptToService(content).then((result)=>this.metricsData = result);
+    // // this.metricsValue.sendPromptToService(content).then((result)=>this.metricsData = result);
     this.metricsValue.sendPromptToService(content);
-    // console.log(this.metricsData);
+    this.metricsValue.currentPrompt.subscribe((metricsData) => {
+      this.promptSuggest = metricsData[0].sanitized_prompt;
+    });
+    // // console.log(this.metricsData);
 
 
   }
