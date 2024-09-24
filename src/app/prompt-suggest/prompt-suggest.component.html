@@ -1,0 +1,13 @@
+<div class="card border-info mb-3" *ngIf="promptSuggest == ''">
+    <div class="card-header"></div>
+    <div class="card-body ">
+      <h5 class="card-title">Please Ask a prompt to view the Result!</h5>
+    </div>
+  </div>
+<div class="card border-info mb-3" *ngIf="promptSuggest != ''">
+    <div class="card-header"></div>
+    <div class="card-body ">
+      <h5 class="card-title">{{this.responseType}}</h5>
+      <p class="card-text">{{this.promptSuggest}}</p>
+    </div>
+  </div>

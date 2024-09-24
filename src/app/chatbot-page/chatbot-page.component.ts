@@ -36,8 +36,6 @@ export class ChatbotPageComponent implements OnInit {
     this.showResponse = false;
     console.log(this.showResponse);
     this.pushChatContent(this.promptText, 'You', 'Person');
-    // this.pushChatContent(this.promptText,'You','Person');
-    this.invokeGPT();
     this.promptText = '';
   }
 
@@ -56,11 +54,8 @@ export class ChatbotPageComponent implements OnInit {
       this.promptSuggest = metricsData[0].sanitized_prompt
         ? 'Sanitized Prompt: ' + metricsData[0].sanitized_prompt
         : 'Response: ' + metricsData[0].response;
-      console.log('chat1' + this.showResponse);
       this.showResponse = true;
-      console.log('chat2' + this.showResponse);
     });
-    console.log('chat4' + this.showResponse);
     // // console.log(this.metricsData);
   }
 

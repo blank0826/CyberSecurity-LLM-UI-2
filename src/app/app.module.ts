@@ -15,7 +15,8 @@ import { DetailViewModalComponent } from './detail-view-modal/detail-view-modal.
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BanTopicsModalComponent } from './ban-topics-modal/ban-topics-modal.component'
+import { BanTopicsModalComponent } from './ban-topics-modal/ban-topics-modal.component';
+import { PromptSuggestComponent } from './prompt-suggest/prompt-suggest.component'
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { BanTopicsModalComponent } from './ban-topics-modal/ban-topics-modal.com
     MetricsCardsComponent,
     DetailViewModalComponent,
     BanTopicsModalComponent,
+    PromptSuggestComponent,
   ],
   imports: [
     BrowserModule,
